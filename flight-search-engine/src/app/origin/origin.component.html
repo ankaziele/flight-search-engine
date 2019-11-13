@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="origin" />
+<div *ngIf="origin.length > 2" >
+<p *ngFor="let airport of airportsList" (click)="addToInput(airport.airport)">{{airport.airport}}</p>
+</div>
+
+
+<!-- rozszerzenie paragrafu p zeby mial kod kraj itd// -->
+<!-- dodac metode onKeyDown zeby mozna strzalkami wybierac, po nacisnieciu gora i dol ktorys z paragrafow p jest selected -->
