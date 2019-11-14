@@ -1,0 +1,14 @@
+.listWrapper {
+    width: 40%;
+}
+
+.listItem {
+    background: lightblue;
+    padding: 5px;
+    border: 1px solid green;
+    margin: 0;
+}
+
+.selected {
+    background: yellow;
+}
