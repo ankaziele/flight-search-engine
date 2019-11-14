@@ -1,14 +1,16 @@
 .listWrapper {
     width: 40%;
+    box-shadow: 5px 5px 7px lightgray;
 }
 
 .listItem {
-    background: lightblue;
-    padding: 5px;
-    border: 1px solid green;
+    background-color: rgb(233, 235, 236);
+    color: grey;
+    padding: 10px;
     margin: 0;
 }
 
 .selected {
-    background: yellow;
+    background: rgb(21, 36, 68);
+    color: white;
 }

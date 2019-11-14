@@ -8,6 +8,7 @@ import { AirportsService } from '../airports.service';
 })
 export class OriginComponent implements OnInit {
   origin: string = '';
+  selectedAirport: any;
   airportsList: ({
     airport: string,
     code: string,
@@ -26,9 +27,7 @@ export class OriginComponent implements OnInit {
   }
 
   addToInput(selectedAirport){
-    console.log(selectedAirport)
-    this.origin = selectedAirport
+    this.origin = selectedAirport.airport || selectedAirport.area;
+    this.selectedAirport = selectedAirport
   }
-
-
 }
