@@ -1,6 +1,7 @@
 .listWrapper {
     width: 25%;
     box-shadow: 5px 5px 7px lightgray;
+    padding: 0;
 }
 
 .listItem {

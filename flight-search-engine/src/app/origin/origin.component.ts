@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AirportsService } from '../airports.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { AirportsService } from '../airports.service';
   styleUrls: ['./origin.component.css']
 })
 export class OriginComponent implements OnInit {
+
+
+
   origin: string = '';
   selectedAirport: any;
   airportsList: ({
@@ -22,6 +25,15 @@ export class OriginComponent implements OnInit {
     console.log(this.airportsService.getAirports())
    }
 
+   @HostListener('window:keydown', ['$event']) onArrowClicked(event: any) {
+     if (event.keyCode === 40) {
+      this.addToInput(this.selectedAirport)
+     } else if (
+       event.keyCode ===38) {
+        this.addToInput(this.selectedAirport)
+     }
+  }
+
   ngOnInit() {
     this.airportsList = this.airportsService.getAirports();
   }
@@ -32,4 +44,7 @@ export class OriginComponent implements OnInit {
 
     console.log(selectedAirport)
   }
+
+
+
 }

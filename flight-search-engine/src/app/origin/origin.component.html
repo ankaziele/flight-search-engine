@@ -1,7 +1,7 @@
 <input type="text" [(ngModel)]="origin" />
-<div *ngIf="origin.length > 2" class="listWrapper">
-    <div [class.selected]="airport === selectedAirport" class="listItem" *ngFor="let airport of airportsList"
-        (click)="addToInput(airport)">
+<ul *ngIf="origin.length > 2" class="listWrapper" >
+    <li [class.selected]="airport === selectedAirport" class="listItem" *ngFor="let airport of airportsList"
+        (click)="addToInput(airport)" >
         <span>
                 {{airport.airport || airport.area}}
         </span>
@@ -10,8 +10,8 @@
         </span><span>
             {{airport.country}}
         </span>
-    </div>
-</div>
+    </li>
+</ul>
 
 
 <!-- rozszerzenie paragrafu p zeby mial kod kraj itd// -->
