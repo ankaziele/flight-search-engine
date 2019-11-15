@@ -29,5 +29,7 @@ export class OriginComponent implements OnInit {
   addToInput(selectedAirport){
     this.origin = selectedAirport.airport || selectedAirport.area;
     this.selectedAirport = selectedAirport
+
+    console.log(selectedAirport)
   }
 }

@@ -1,13 +1,19 @@
 .listWrapper {
-    width: 40%;
+    width: 25%;
     box-shadow: 5px 5px 7px lightgray;
 }
 
 .listItem {
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(233, 235, 236);
     color: grey;
     padding: 10px;
     margin: 0;
+}
+
+.listItem span {
+    width: 30%;
 }
 
 .selected {

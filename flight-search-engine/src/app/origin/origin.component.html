@@ -1,9 +1,16 @@
 <input type="text" [(ngModel)]="origin" />
 <div *ngIf="origin.length > 2" class="listWrapper">
-    <p [class.selected]="airport === selectedAirport" class="listItem" *ngFor="let airport of airportsList"
+    <div [class.selected]="airport === selectedAirport" class="listItem" *ngFor="let airport of airportsList"
         (click)="addToInput(airport)">
-        {{airport.airport || airport.area}}
-    </p>
+        <span>
+                {{airport.airport || airport.area}}
+        </span>
+        <span>
+            {{airport.code | uppercase}}
+        </span><span>
+            {{airport.country}}
+        </span>
+    </div>
 </div>
 
 
