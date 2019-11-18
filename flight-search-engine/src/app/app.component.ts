@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewInit, AfterContentInit, AfterViewChecked } from '@angular/core';
+import { LocationInputComponent } from './location-input/location-input.component';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +7,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(LocationInputComponent, null) originName;
+
   title = 'flight-search-engine';
   origin: string = '';
 
-
-  originiEmitterParent(originName) {
-    this.origin = originName
-    console.log(this.origin, 'originName')
+  ngOnInit() {
+    // this.origin = this.originName.origin 
   }
+
+  ngAfterViewChecked() {
+    console.log('after', this.originName.origin)
+    this.origin = this.originName.origin 
+    console.log('dupa', this.origin)
+  }
+
+  // ngAfterViewInit() {
+  //   console.log(this.originName, 'jigsao')
+  //   this.origin = this.originName.origin
+  //   console.log(this.originName.origin, 'ORIGINNNN')
+  // }
 
 
 

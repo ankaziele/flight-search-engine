@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-location-input',
@@ -6,15 +6,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./location-input.component.css']
 })
 export class LocationInputComponent implements OnInit {
-  @Output() originEmitter = new EventEmitter<string>();
-  @Input() origin: string = 'im here'
+ origin: string = ''
   constructor() { }
 
   ngOnInit() {
-  }
-
-  passOriginName() {
-    this.originEmitter.emit(this.origin)
   }
 
 }
