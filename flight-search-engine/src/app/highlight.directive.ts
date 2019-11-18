@@ -14,6 +14,11 @@ export class HighlightDirective {
     this.highlight(null, null);
   }
 
+  // @HostListener('keydown') onKeyDown() {
+  //   console.log('downn')
+  //   this.highlight('rgb(21, 36, 68)', 'white')
+  // }
+
   private highlight(backgroundColor: string, color: string) {
     this.el.nativeElement.style.backgroundColor = backgroundColor;
     this.el.nativeElement.style.color = color;
