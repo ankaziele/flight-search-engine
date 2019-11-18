@@ -1,5 +1,5 @@
-
-<ul tabindex=1 *ngIf="origin.length > 2" class="listWrapper" >
+<input type="text" [(ngModel)]="origin">
+<ul *ngIf="origin.length > 2" class="listWrapper" >
     <li appHighlight class="listItem" *ngFor="let airport of airportsList"
         (click)="addToInput(airport)" >
         <span>

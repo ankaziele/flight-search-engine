@@ -7,10 +7,7 @@ import { AirportsService } from '../airports.service';
   styleUrls: ['./origin.component.css']
 })
 export class OriginComponent implements OnInit {
-
-
-
-  @Input() origin: string = '';
+  origin: string = '';
   selectedAirport: any;
   airportsList: ({
     airport: string,

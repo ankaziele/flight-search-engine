@@ -6,14 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OriginComponent } from './origin/origin.component';
 import { HighlightDirective } from './highlight.directive';
-import { LocationInputComponent } from './location-input/location-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OriginComponent,
     HighlightDirective,
-    LocationInputComponent
   ],
   imports: [
     BrowserModule,

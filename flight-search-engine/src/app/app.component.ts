@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'flight-search-engine';
-  origin: string = '';
-
-
-  originiEmitterParent(originName) {
-    this.origin = originName
-    console.log(this.origin, 'originName')
-  }
-
-
-
 }
