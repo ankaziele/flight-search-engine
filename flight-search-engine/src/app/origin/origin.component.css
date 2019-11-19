@@ -21,3 +21,18 @@
     background: rgb(21, 36, 68);
     color: white;
 }
+
+.areasList {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(21, 36, 68);
+}
+
+.airportArea {
+    border-top: 1px solid rgb(21, 36, 68);
+    border-bottom: 1px solid rgb(21, 36, 68);
+    background: #f8f8f8;
+}
+
+.sublist {
+    padding-left: 35px;
+}
