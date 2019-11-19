@@ -1,11 +1,10 @@
 <input type="text" [(ngModel)]="origin">
-<ul *ngIf="origin.length > 2" class="listWrapper" >
+<ul *ngIf="origin.length > 2" class="listWrapper">
     <div *ngFor="let airport of airportsList">
         <div *ngIf="airport.airport">
-            <li appHighlight class="listItem" 
-                (click)="addToInput(airport)" >
+            <li appHighlight class="listItem" (click)="addToInput(airport)">
                 <span>
-                        {{airport.airport}}
+                    {{airport.airport}}
                 </span>
                 <span>
                     {{airport.code | uppercase}}
@@ -16,15 +15,15 @@
         </div>
         <div *ngIf="airport.area" class="areasList">
             <div class="airportArea">
-                    {{airport.area}}
+                {{airport.area}}
             </div>
             <li appHighlight *ngFor="let item of airport.items" class="listItem sublist" (click)="addToInput(item)">
                 <span>{{item.airport}}</span>
                 <span>
-                        {{item.code | uppercase}}
+                    {{item.code | uppercase}}
                 </span>
                 <span>
-                        {{item.country}}
+                    {{item.country}}
                 </span>
             </li>
         </div>
