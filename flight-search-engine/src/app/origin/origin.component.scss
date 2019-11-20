@@ -1,0 +1,125 @@
+label {
+    padding: 20px;
+}
+
+.listWrapper {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 5px 5px 7px lightgray;
+    padding: 0;
+    margin: 45px 0 0 20px;
+}
+
+.listItem {
+    display: grid;
+    grid-template-columns: 40% 25% 35%;
+    justify-content: space-between;
+    background-color: rgb(233, 235, 236);
+    color: grey;
+    padding: 10px;
+    margin: 0;
+}
+
+.listItem span {
+    padding: 5px;
+    white-space: wrap;
+    /* width: 30%; */
+}
+
+.listItem span:last-child {
+    text-align: end;
+}
+
+.selected {
+    background: rgb(21, 36, 68);
+    color: white;
+}
+
+.areasList {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(21, 36, 68);
+}
+
+.areaName {
+    border-top: 1px solid rgb(21, 36, 68);
+    border-bottom: 1px solid rgb(21, 36, 68);
+    background: #f8f8f8;
+    padding: 5px;
+}
+
+
+.input {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 400px;    
+    top: 40px;
+}
+
+.label {
+    position: absolute;
+    top: 53px;
+    left: 29px;
+    font-size: 16px;
+    color: #9098A9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all .2s ease;
+}
+
+.border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    // background: #0077FF;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all .15s ease;
+}
+
+input{
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    // padding: 12px 0;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid #223254;
+    background: none;
+    border-radius: 0;
+    color: #223254;
+    transition: all .15s ease;
+    
+    // &:hover {
+    //     background: #223254;
+    // }
+  &:not(:placeholder-shown){
+
+      + span {
+          color: #223254;
+          transform: translateY(-26px) scale(.75);
+      }
+  }
+  &:focus {
+
+      background: none;
+      outline: none;
+      box-shadow:  5px 2px 7px #6f7b92, -5px 2px 7px #6f7b92;
+      + span {
+          transform: translateY(-26px) scale(.75);
+        }
+              + .border {
+    
+                  transform: scaleX(1) color #0077FF;
+              }
+       
+  }
+}
+
+/* .sublist {
+    padding-left: 35px;
+} */

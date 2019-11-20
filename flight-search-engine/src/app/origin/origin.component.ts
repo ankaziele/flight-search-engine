@@ -4,7 +4,7 @@ import { AirportsService } from '../airports.service';
 @Component({
   selector: 'app-origin',
   templateUrl: './origin.component.html',
-  styleUrls: ['./origin.component.css']
+  styleUrls: ['./origin.component.scss']
 })
 export class OriginComponent implements OnInit {
   origin: string = '';
@@ -37,8 +37,8 @@ export class OriginComponent implements OnInit {
   }
 
   addToInput(selectedAirport) {
-    console.log('test')
     this.origin = selectedAirport.airport;
     this.selectedAirport = selectedAirport;
+ 
   }
 }
