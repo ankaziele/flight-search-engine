@@ -41,4 +41,8 @@ export class OriginComponent implements OnInit {
     this.selectedAirport = selectedAirport;
  
   }
+
+  clearInput() {
+    this.origin = '';
+  }
 }
