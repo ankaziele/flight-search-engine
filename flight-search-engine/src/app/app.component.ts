@@ -4,7 +4,7 @@ import { LocationInputComponent } from './location-input/location-input.componen
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   @ViewChild(LocationInputComponent, null) originName;
@@ -19,7 +19,7 @@ export class AppComponent {
   ngAfterViewChecked() {
     console.log('after', this.originName.origin)
     this.origin = this.originName.origin 
-    console.log('dupa', this.origin)
+    console.log('this.origin', this.origin)
   }
 
   // ngAfterViewInit() {
