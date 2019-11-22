@@ -1,11 +1,15 @@
-
+label {
+    position: relative;
+}
 
 .listWrapper {
     width: 100%;
     max-width: 400px;
     box-shadow: 5px 5px 7px lightgray;
     padding: 0;
-    margin-top: 45px;
+    position: absolute;
+    top: 85px;
+
 }
 
 .listItem {
@@ -55,8 +59,8 @@
 
 .label {
     position: absolute;
-    top: 53px;
-    left: 9px;
+    top: 40px;
+    left: 1px;
     font-size: 16px;
     color: #9098A9;
     font-weight: 500;
@@ -121,8 +125,8 @@ input{
     height: 21px;
     width: 21px;
     border-radius: 50%;
-    top: 55px;
-    left: 385px;
+    top: 40px;
+    right: 5px;
     font-size: 40px;
     color: white;
     margin: 2px;
