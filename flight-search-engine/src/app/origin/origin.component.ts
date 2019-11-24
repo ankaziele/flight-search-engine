@@ -12,6 +12,7 @@ export class OriginComponent implements OnInit {
   origin: string = '';
   selectedAirport: any;
   airportsList: (Airport | Area)[];
+  @Input() placeholder: string;
 
 
 
@@ -30,6 +31,7 @@ export class OriginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.placeholder)
     this.airportsList = this.airportsService.getAirports();
     this.airportsList.sort((a, b) => {
       

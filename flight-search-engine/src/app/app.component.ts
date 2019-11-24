@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  from: string = "From";
+  to: string = "To"
   title = 'flight-search-engine';
 }
