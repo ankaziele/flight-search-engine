@@ -16,10 +16,18 @@ label {
     display: grid;
     grid-template-columns: 40% 25% 35%;
     justify-content: space-between;
-    background-color: rgb(233, 235, 236);
+    // background-color: rgb(233, 235, 236);
     color: grey;
     padding: 10px;
     margin: 0;
+}
+
+.itemWrapper {
+    background: red;
+}
+
+.itemWrapper.selected {
+    background: yellow;
 }
 
 .listItem span {

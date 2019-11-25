@@ -9,7 +9,7 @@ import { Airport } from '../airport';
   styleUrls: ['./origin.component.scss']
 })
 export class OriginComponent implements OnInit {
-  origin: string = '';
+  value: string = '';
   selectedAirport: any;
   airportsList: (Airport | Area)[];
   @Input() placeholder: string;
@@ -48,15 +48,20 @@ export class OriginComponent implements OnInit {
   }
 
   addToInput(selectedAirport) {
-    this.origin = selectedAirport.airport;
+    this.value = selectedAirport.airport;
     this.selectedAirport = selectedAirport;
-    console.log(this.origin, 'ori')
+    console.log(this.value, 'ori')
     console.log(this.selectedAirport.airport, 'airpo')
 
  
   }
 
+
+  onMouseOver(airport){
+    console.log('hello', airport)
+  }
+
   clearInput() {
-    this.origin = '';
+    this.value = '';
   }
 }
