@@ -52,20 +52,15 @@ export class AirportComponent implements OnInit {
   addToInput(selectedAirport) {
     this.value = selectedAirport.airport;
     this.selectedAirport = selectedAirport;
-    console.log(this.value, 'ori')
-    console.log(this.selectedAirport.airport, 'airpo')
-  
   }
 
 
   onMouseOver(airport){
     airport.selected = true;
-    console.log('hello', airport.selected)
   }
 
   onMouseLeave(airport){
     airport.selected = false;
-    console.log('hello', airport.selected)
     this.selected = null;
   }
 
@@ -77,7 +72,8 @@ export class AirportComponent implements OnInit {
     } else {
       let newIndex = this.airportsList.findIndex(airport => airport == this.selected) - 1
       this.selected = this.airportsList[newIndex]
-      this.selected.selected = true
+      this.selected.selected = true;
+      this.airportsList[newIndex+1].selected = false;
       console.log(this.selected)
     }
       
@@ -85,16 +81,18 @@ export class AirportComponent implements OnInit {
   }
 
 
-  nextAirport(event) {
+  nextAirport() {
     if (!this.selected && this.airportsList.length) {
       this.selected = this.airportsList[0]
       this.selected.selected =true
-      console.log(event)
+      console.log(this.selected)
     } else {
-      let newIndex = this.airportsList.findIndex(airport => airport == this.selected) + 1
+      let newIndex = this.airportsList.findIndex(airport => airport == this.selected) + 1;
+      let previousIndex = this.airportsList.findIndex(airport => airport == this.selected)
       this.selected = this.airportsList[newIndex]
       this.selected.selected =true
-      console.log(event)
+      this.airportsList[newIndex-1].selected = false;
+      console.log(this.selected)
     }
   }
 

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  from: string = "From";
-  to: string = "To"
+  origin: string = "From";
+  destination: string = "To"
   title = 'flight-search-engine';
 }
