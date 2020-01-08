@@ -1,5 +1,14 @@
 <label>
-<input type="text" [(ngModel)]="value" placeholder="{{placeholder}}" class="input">
+<input 
+type="text" 
+[(ngModel)]="value" 
+placeholder="{{placeholder}}" 
+class="input" 
+isOpened="isOpened"
+(keyup.arrowup)="previousAirport()"
+(keyup.arrowdown)="nextAirport($event)"
+(keydown.enter)="addToInput(airport)"
+>
 <span class="label">{{placeholder}}</span>
 <span class="close" (click)="clearInput()"></span>
 <span class="border"></span>
@@ -7,12 +16,12 @@
 <ul *ngIf="value.length > 2" class="listWrapper">
     <div *ngFor="let airport of airportsList"
         class="itemWrapper"
-        [class.selected]="airport.selected"
-        (onmouseover)="onMouseOver(airport)"
+        (mouseenter)="onMouseOver(airport)"
+        (mouseleave)="onMouseLeave(airport)"
     
     >
         <div *ngIf="airport.airport">
-            <li class="listItem" (click)="addToInput(airport)">
+            <li class="listItem" [class.selected]="airport.selected" (click)="addToInput(airport)">
                 <span>
                     {{airport.airport}}
                 </span>
