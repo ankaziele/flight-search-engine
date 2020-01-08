@@ -13,7 +13,7 @@ export class AirportComponent implements OnInit {
   selectedAirport: any;
   airportsList: (Airport | Area)[];
   @Input() placeholder: string;
-  selected = null;
+  // selected = null;
   isOpened = true;
 
 
@@ -61,20 +61,22 @@ export class AirportComponent implements OnInit {
 
   onMouseLeave(airport){
     airport.selected = false;
-    this.selected = null;
+    this.selectedAirport = null;
   }
 
   previousAirport() {
-    if (!this.selected && this.airportsList.length) {
-      this.selected = this.airportsList[0]
-      this.selected.selected =true
-      console.log(this.selected)
+    if (!this.selectedAirport && this.airportsList.length) {
+      this.selectedAirport = this.airportsList[0]
+      this.selectedAirport.selected =true
+      this.value = this.selectedAirport.airport
+      console.log(this.selectedAirport)
     } else {
-      let newIndex = this.airportsList.findIndex(airport => airport == this.selected) - 1
-      this.selected = this.airportsList[newIndex]
-      this.selected.selected = true;
+      let newIndex = this.airportsList.findIndex(airport => airport == this.selectedAirport) - 1
+      this.selectedAirport = this.airportsList[newIndex]
+      this.selectedAirport.selected = true;
       this.airportsList[newIndex+1].selected = false;
-      console.log(this.selected)
+      this.value = this.selectedAirport.airport
+      console.log(this.selectedAirport)
     }
       
     
@@ -82,17 +84,19 @@ export class AirportComponent implements OnInit {
 
 
   nextAirport() {
-    if (!this.selected && this.airportsList.length) {
-      this.selected = this.airportsList[0]
-      this.selected.selected =true
-      console.log(this.selected)
+    if (!this.selectedAirport && this.airportsList.length) {
+      this.selectedAirport = this.airportsList[0]
+      this.selectedAirport.selected =true
+      this.value = this.selectedAirport.airport
+      console.log(this.selectedAirport)
     } else {
-      let newIndex = this.airportsList.findIndex(airport => airport == this.selected) + 1;
-      let previousIndex = this.airportsList.findIndex(airport => airport == this.selected)
-      this.selected = this.airportsList[newIndex]
-      this.selected.selected =true
+      let newIndex = this.airportsList.findIndex(airport => airport == this.selectedAirport) + 1;
+      let previousIndex = this.airportsList.findIndex(airport => airport == this.selectedAirport)
+      this.selectedAirport = this.airportsList[newIndex]
+      this.selectedAirport.selected =true
       this.airportsList[newIndex-1].selected = false;
-      console.log(this.selected)
+      this.value = this.selectedAirport.airport
+      console.log(this.selectedAirport)
     }
   }
 
