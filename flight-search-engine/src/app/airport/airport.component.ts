@@ -13,7 +13,6 @@ export class AirportComponent implements OnInit {
   selectedAirport: any;
   airportsList: (Airport | Area)[];
   @Input() placeholder: string;
-  // selected = null;
   isOpened = true;
 
 
@@ -54,6 +53,9 @@ export class AirportComponent implements OnInit {
     this.selectedAirport = selectedAirport;
   }
 
+  closeList() {
+    this.isOpened = false;
+  }
 
   onMouseOver(airport){
     airport.selected = true;
@@ -65,6 +67,7 @@ export class AirportComponent implements OnInit {
   }
 
   previousAirport() {
+    this.isOpened = true;
     if (!this.selectedAirport && this.airportsList.length) {
       this.selectedAirport = this.airportsList[0]
       this.selectedAirport.selected =true
@@ -84,6 +87,7 @@ export class AirportComponent implements OnInit {
 
 
   nextAirport() {
+    this.isOpened = true;
     if (!this.selectedAirport && this.airportsList.length) {
       this.selectedAirport = this.airportsList[0]
       this.selectedAirport.selected =true
