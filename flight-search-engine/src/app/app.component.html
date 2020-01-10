@@ -1,5 +1,5 @@
 <div class="appWrapper">
-    <app-airport [placeholder]="origin"></app-airport>
-    <app-input-toggler></app-input-toggler>
-    <app-airport [placeholder]="destination"></app-airport>
+    <app-airport [placeholder]="origin">{{origin}}</app-airport>
+    <app-input-toggler [origin]="origin" [destination]="destination" (togglingAirports)="receiveChangeAirports($event)"></app-input-toggler>
+    <app-airport [placeholder]="destination">{{destination}}</app-airport>
 </div> 

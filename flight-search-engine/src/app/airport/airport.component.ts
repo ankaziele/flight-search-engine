@@ -77,7 +77,7 @@ export class AirportComponent implements OnInit {
       let newIndex = this.airportsList.findIndex(airport => airport == this.selectedAirport) - 1
       this.selectedAirport = this.airportsList[newIndex]
       this.selectedAirport.selected = true;
-      this.airportsList[newIndex+1].selected = false;
+      // this.airportsList[newIndex+1].selected = false;
       this.value = this.selectedAirport.airport
       console.log(this.selectedAirport)
     }
@@ -98,9 +98,10 @@ export class AirportComponent implements OnInit {
       let previousIndex = this.airportsList.findIndex(airport => airport == this.selectedAirport)
       this.selectedAirport = this.airportsList[newIndex]
       this.selectedAirport.selected =true
-      this.airportsList[newIndex-1].selected = false;
+      // this.airportsList[newIndex-1].selected = false;
       this.value = this.selectedAirport.airport
       console.log(this.selectedAirport)
+      console.log(this.airportsList[newIndex-1])
     }
   }
 
