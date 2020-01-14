@@ -1,27 +1,32 @@
 <label>
-<input 
-type="text" 
-[(ngModel)]="value"
-placeholder="{{placeholder}}" 
-class="input" 
-isOpened="isOpened"
-(keyup.arrowup)="previousAirport()"
-(keyup.arrowdown)="nextAirport()"
-(keydown.enter)="closeList()"
->
-<span class="label">{{placeholder}}</span>
-<span class="close" (click)="clearInput()"></span>
-<span class="border"></span>
+    <input 
+        type="text" 
+        [(ngModel)]="value"
+        placeholder="{{placeholder}}" 
+        class="input" 
+        isOpened="isOpened"
+        (keyup.arrowup)="previousAirport()"
+        (keyup.arrowdown)="nextAirport()"
+        (keydown.enter)="addToInput(airport)"
+    >
+    <span class="label">{{placeholder}}</span>
+    <span class="close" (click)="clearInput()"></span>
+    <span class="border"></span>
 </label>
 <ul *ngIf="value.length > 2 && isOpened" class="listWrapper">
-    <div *ngFor="let airport of airportsList"
+    <div 
+        *ngFor="let airport of airportsList"
         class="itemWrapper"
         (mouseenter)="onMouseOver(airport)"
         (mouseleave)="onMouseLeave(airport)"
-    
+
     >
         <div *ngIf="airport.airport">
-            <li class="listItem" [class.selected]="airport.selected" (click)="addToInput(airport)">
+            <li 
+                class="listItem" 
+                [class.selected]="airport.selected" 
+                (click)="addToInput(airport)"
+            >
                 <span>
                     {{airport.airport}}
                 </span>

@@ -10,6 +10,7 @@ export class AppComponent {
   origin: string = "From";
   destination: string = "To"
   title = 'flight-search-engine';
+  from: string = "From"
 
 
   receiveChangeAirports($event) {
@@ -21,6 +22,16 @@ export class AppComponent {
 
     console.log('app orign', this.origin)
     console.log('app destination', this.destination)
+  }
+
+  incomingOrigin($event) {
+    console.log('przyszlo', $event)
+    this.origin = $event.airport
+  }
+
+  incomingDestination($event) {
+    console.log('przyszlo', $event)
+    this.destination = $event.airport
   }
 
 
