@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 .appWrapper {
     display: grid;
     grid-template-columns: 45% 10% 45%;
@@ -5,4 +7,8 @@
 
 .toggler {
     justify-self: center;
+}
+
+.calendar {
+    margin-top: 30px;
 }
