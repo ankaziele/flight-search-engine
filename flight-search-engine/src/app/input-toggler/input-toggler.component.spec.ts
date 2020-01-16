@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocationInputComponent } from './location-input.component';
+import { InputTogglerComponent } from './input-toggler.component';
 
-describe('LocationInputComponent', () => {
-  let component: LocationInputComponent;
-  let fixture: ComponentFixture<LocationInputComponent>;
+describe('InputTogglerComponent', () => {
+  let component: InputTogglerComponent;
+  let fixture: ComponentFixture<InputTogglerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationInputComponent ]
+      declarations: [ InputTogglerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocationInputComponent);
+    fixture = TestBed.createComponent(InputTogglerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

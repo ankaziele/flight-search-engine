@@ -4,16 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OriginComponent } from './origin/origin.component';
-import { HighlightDirective } from './highlight.directive';
-import { LocationInputComponent } from './location-input/location-input.component';
+import { InputTogglerComponent } from './input-toggler/input-toggler.component';
+import { AirportComponent } from './airport/airport.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OriginComponent,
-    HighlightDirective,
-    LocationInputComponent
+    InputTogglerComponent,
+    AirportComponent
   ],
   imports: [
     BrowserModule,

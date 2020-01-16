@@ -113,10 +113,25 @@ export class AirportsService {
     }
 ]
 
+
+
   constructor() { }
 
   getAirports() {
-    return this.airports;
+    return JSON.parse(JSON.stringify(this.airports));
+  }
+
+  getFlatListOfAirports(airportsList) {
+    //   debugger
+      let flatListAirports = [];
+      for(var i =0; i < airportsList.length; i++) {
+          if (airportsList[i].airport) {
+              flatListAirports.push(airportsList[i])
+          } else {
+            flatListAirports.push(...airportsList[i].items)
+          }
+        }
+        return flatListAirports
   }
 
 
