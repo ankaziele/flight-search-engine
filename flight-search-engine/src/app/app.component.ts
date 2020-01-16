@@ -7,10 +7,11 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
 
-  origin: string = "From";
-  destination: string = "To"
+  origin: string = '';
+  destination: string = '';
   title = 'flight-search-engine';
-  from: string = "From"
+  from: string = "From";
+  to: string = "To"
 
 
   receiveChangeAirports($event) {
@@ -25,12 +26,12 @@ export class AppComponent {
   }
 
   incomingOrigin($event) {
-    console.log('przyszlo', $event)
+    console.log('przyszlo org', $event)
     this.origin = $event.airport
   }
 
   incomingDestination($event) {
-    console.log('przyszlo', $event)
+    console.log('przyszlo dest ', $event)
     this.destination = $event.airport
   }
 
