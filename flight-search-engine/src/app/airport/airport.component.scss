@@ -1,3 +1,7 @@
+.inputWrapper {
+    width: 100%;
+    max-width: 380px;
+}
 label {
     position: relative;
 }
@@ -9,6 +13,7 @@ label {
     padding: 0;
     position: absolute;
     top: 85px;
+    z-index: 2;
 
 }
 

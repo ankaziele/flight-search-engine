@@ -1,14 +1,67 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.bg {
+  width: 100%x;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bg::after {
+  content: "";
+  background: url("./LHA350.jpg") no-repeat center;
+  background-size: 100% 100%;
+  background-position: top center;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.flightSearchEngine {
+  display: block;
+  width: 90%;
+  height: 100%;
+  background-color: rgba(248, 244, 244, 0.411);
+  align-self: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-radius: 10px;
+}
 
 .appWrapper {
-    display: grid;
-    grid-template-columns: 45% 10% 45%;
+  display: inline-grid;
+  grid-template-columns: 45% 10% 45%;
+  width: 90%;
+  margin: 30px;
+  justify-items: center;
 }
 
 .toggler {
-    justify-self: center;
+  justify-self: center;
 }
 
 .calendar {
-    margin-top: 30px;
+  margin: 30px;
+}
+
+.airport {
+  width: 100%;
+  max-width: 380px;
+}
+
+
+@media (max-width:801px) {
+  .appWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 30px;
+    justify-content: space-evenly;
+  }
 }

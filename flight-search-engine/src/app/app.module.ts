@@ -13,6 +13,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
     InputTogglerComponent,
     AirportComponent,
     CalendarComponent,
+    TopNavBarComponent,
   ],
   imports: [
     BrowserModule,
