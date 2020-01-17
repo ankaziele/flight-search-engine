@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { OneWayTogglerComponent } from './one-way-toggler/one-way-toggler.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
     AirportComponent,
     CalendarComponent,
     TopNavBarComponent,
+    OneWayTogglerComponent,
   ],
   imports: [
     BrowserModule,

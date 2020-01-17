@@ -27,8 +27,13 @@
         {{ destination }}</app-airport
       >
     </div>
-    <div class="calendar">
+    <app-one-way-toggler [selected]="checkBox" (oncheckBoxSelect)="isCheckBoxSelected($event)"></app-one-way-toggler>
+    <div class="calendarWrapper">
+      
       <app-calendar></app-calendar>
+      <div class="calendar" *ngIf="!checkBox">
+        <app-calendar></app-calendar>
+      </div>
     </div>
   </div>
 </div>

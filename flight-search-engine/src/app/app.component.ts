@@ -1,39 +1,35 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-
-  origin: string = '';
-  destination: string = '';
-  title = 'flight-search-engine';
+  origin: string = "";
+  destination: string = "";
+  title = "flight-search-engine";
   from: string = "From";
-  to: string = "To"
-
+  to: string = "To";
+  checkBox: boolean;
 
   receiveChangeAirports($event) {
-    console.log('incoming event dest', $event.dest)
-    console.log('incoming event origin', $event.origin)
+    console.log("incoming event dest", $event.dest);
+    console.log("incoming event origin", $event.origin);
 
     this.origin = $event.dest;
-    this.destination = $event.origin
-
-    console.log('app orign', this.origin)
-    console.log('app destination', this.destination)
+    this.destination = $event.origin;
   }
 
   incomingOrigin($event) {
-    console.log('przyszlo org', $event)
-    this.origin = $event.airport
+    this.origin = $event.airport;
   }
 
   incomingDestination($event) {
-    console.log('przyszlo dest ', $event)
-    this.destination = $event.airport
+    this.destination = $event.airport;
   }
 
-
+  isCheckBoxSelected($event) {
+    this.checkBox = $event.selected;
+  }
 }
