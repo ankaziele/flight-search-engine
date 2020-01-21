@@ -6,9 +6,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./calendar.component.scss"]
 })
 export class CalendarComponent implements OnInit {
+  departureDate: Date;
+  returnDate: Date;
+  selected: boolean = false;
+  checkBoxInnerHtml: string = "One way";
+  minDate: Date = new Date();
 
-  minDate = new Date();
   constructor() {}
 
   ngOnInit() {}
+
+  onCheckboxSelected() {
+    this.selected = !this.selected;
+  }
 }

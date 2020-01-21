@@ -1,6 +1,36 @@
-<mat-form-field class="example-full-width" color="accent">
-    <input matInput [min]="minDate" [matDatepicker]="picker" placeholder="Choose a date">
-    <mat-datepicker-toggle matSuffix [for]="picker">
-    </mat-datepicker-toggle>
-    <mat-datepicker #picker color="primary"></mat-datepicker>
-  </mat-form-field>
+<div class="calendarComponentWrapper">
+  <div class="checkboxWrapper">
+    <input
+      type="checkbox"
+      [(ngModel)]="selected"
+      (click)="onCheckboxSelected()"
+    />
+    <p>One way</p>
+  </div>
+  <div class="calendarWrapper">
+    <mat-form-field class="example-full-width" color="accent">
+      <input
+        [(ngModel)]="departureDate"
+        matInput
+        [min]="minDate"
+        [max]="returnDate"
+        [matDatepicker]="picker"
+        placeholder="Choose a date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
+      <mat-datepicker #picker color="primary"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!selected" class="example-full-width" color="accent">
+      <input
+        [(ngModel)]="returnDate"
+        matInput="matInput"
+        [min]="departureDate || minDate"
+        [matDatepicker]="picker"
+        placeholder="Choose a date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
+      <mat-datepicker #picker color="primary"></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>

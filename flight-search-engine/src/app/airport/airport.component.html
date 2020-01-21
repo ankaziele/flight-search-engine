@@ -1,66 +1,64 @@
 <div class="inputWrapper">
-
-    <label>
-        <input 
-            type="text" 
-            [(ngModel)]="value"
-            placeholder="{{placeholder}}" 
-            class="input" 
-            isOpened="isOpened"
-            (keydown)="onKeyDown()"
-            (keyup.arrowup)="previousAirport()"
-            (keyup.arrowdown)="nextAirport()"
-            (keydown.enter)="addToInput()"
+  <label>
+    <input
+      type="text"
+      [(ngModel)]="value"
+      placeholder="{{ placeholder }}"
+      class="input"
+      isOpened="isOpened"
+      (keydown)="onKeyDown()"
+      (keyup.arrowup)="previousAirport()"
+      (keyup.arrowdown)="nextAirport()"
+      (keydown.enter)="addToInput()"
+    />
+    <span class="label">{{ label }}</span>
+    <span class="close" (click)="clearInput()"></span>
+    <span class="border"></span>
+  </label>
+  <ul *ngIf="value.length > 2 && isOpened" class="listWrapper">
+    <div *ngFor="let airport of airportsList" class="itemWrapper">
+      <div
+        *ngIf="airport.airport"
+        (mouseenter)="onMouseOver(airport)"
+        (mouseleave)="onMouseLeave(airport)"
+      >
+        <li
+          class="listItem"
+          [class.selected]="airport.selected"
+          (click)="addToInput()"
         >
-        <span class="label">{{label}}</span>
-        <span class="close" (click)="clearInput()"></span>
-        <span class="border"></span>
-    </label>
-    <ul *ngIf="value.length > 2 && isOpened" class="listWrapper">
-        <div 
-            *ngFor="let airport of airportsList"
-            class="itemWrapper"
-           
-    
-        >
-            <div *ngIf="airport.airport"
-            (mouseenter)="onMouseOver(airport)"
-            (mouseleave)="onMouseLeave(airport)"
-            >
-                <li 
-                    class="listItem" 
-                    [class.selected]="airport.selected" 
-                    (click)="addToInput()"
-                >
-                    <span>
-                        {{airport.airport}}
-                    </span>
-                    <span>
-                        {{airport.code | uppercase}}
-                    </span>
-                    <span>
-                        {{airport.country}}
-                    </span>
-                </li>
-            </div>
-            <div *ngIf="airport.area" class="areasList"
-            >
-                <div class="areaName">
-                    {{airport.area}}
-                </div>
-                <li *ngFor="let item of airport.items" class="listItem sublist" [class.selected]="item.selected" 
-                (click)="addToInput()"  
-                (mouseenter)="onMouseOver(item)"
-                (mouseleave)="onMouseLeave(item)">
-                    <span>{{item.airport}}</span>
-                    <span>
-                        {{item.code | uppercase}}
-                    </span>
-                    <span>
-                        {{item.country}}
-                    </span>
-                </li>
-            </div>
+          <span>
+            {{ airport.airport }}
+          </span>
+          <span>
+            {{ airport.code | uppercase }}
+          </span>
+          <span>
+            {{ airport.country }}
+          </span>
+        </li>
+      </div>
+      <div *ngIf="airport.area" class="areasList">
+        <div class="areaName">
+          {{ airport.area }}
         </div>
-    </ul>
+        <li
+          *ngFor="let item of airport.items"
+          class="listItem sublist"
+          [class.selected]="item.selected"
+          (click)="addToInput()"
+          (mouseenter)="onMouseOver(item)"
+          (mouseleave)="onMouseLeave(item)"
+        >
+          <span>{{ item.airport }}</span>
+          <span>
+            {{ item.code | uppercase }}
+          </span>
+          <span>
+            {{ item.country }}
+          </span>
+        </li>
+      </div>
+    </div>
+  </ul>
 </div>
