@@ -1,5 +1,32 @@
-<div class="appWrapper">
-    <app-airport [placeholder]="from" [label]="from" [value]="origin" (valueChange)="incomingOrigin($event)">{{origin}}</app-airport>
-    <app-input-toggler [origin]="origin" [destination]="destination" (togglingAirports)="receiveChangeAirports($event)"></app-input-toggler>
-    <app-airport [placeholder]="to" [label]="to" [value]="destination" (valueChange)="incomingDestination($event)">{{destination}}</app-airport>
-</div> 
+<div class="bg">
+  <app-top-nav-bar></app-top-nav-bar>
+  <div class="flightSearchEngine">
+    <div class="appWrapper">
+      <app-airport
+        [placeholder]="from"
+        [label]="from"
+        [value]="origin"
+        (valueChange)="incomingOrigin($event)"
+        class="airport"
+      >
+        {{ origin }}
+      </app-airport>
+      <app-input-toggler
+        [origin]="origin"
+        [destination]="destination"
+        (togglingAirports)="receiveChangeAirports($event)"
+      >
+      </app-input-toggler>
+      <app-airport
+        [placeholder]="to"
+        [label]="to"
+        [value]="destination"
+        (valueChange)="incomingDestination($event)"
+        class="airport"
+      >
+        {{ destination }}</app-airport
+      >
+    </div>
+    <app-calendar></app-calendar>
+  </div>
+</div>
