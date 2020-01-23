@@ -12,6 +12,8 @@ export class AppComponent {
   from: string = "From";
   to: string = "To";
   checkBox: boolean;
+  adultCounter: number = 1;
+  childrenCounter: number = 0;
 
   receiveChangeAirports($event) {
     console.log("incoming event dest", $event.dest);
@@ -31,5 +33,6 @@ export class AppComponent {
 
   isCheckBoxSelected($event) {
     this.checkBox = $event.selected;
-  }
+  } 
+
 }

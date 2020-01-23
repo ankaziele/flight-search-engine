@@ -1,7 +1,7 @@
 <div class="bg">
   <app-top-nav-bar></app-top-nav-bar>
   <div class="flightSearchEngine">
-    <div class="appWrapper">
+    <div class="airportWrapper">
       <app-airport
         [placeholder]="from"
         [label]="from"
@@ -27,6 +27,9 @@
         {{ destination }}</app-airport
       >
     </div>
-    <app-calendar></app-calendar>
+    <div class="calendarWrapper">
+      <app-calendar></app-calendar>
+      <app-passenger-counter></app-passenger-counter>
+    </div>
   </div>
 </div>

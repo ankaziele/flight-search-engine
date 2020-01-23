@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OneWayTogglerComponent } from './one-way-toggler.component';
+import { PassengerCounterComponent } from './passenger-counter.component';
 
-describe('OneWayTogglerComponent', () => {
-  let component: OneWayTogglerComponent;
-  let fixture: ComponentFixture<OneWayTogglerComponent>;
+describe('PassengerCounterComponent', () => {
+  let component: PassengerCounterComponent;
+  let fixture: ComponentFixture<PassengerCounterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OneWayTogglerComponent ]
+      declarations: [ PassengerCounterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OneWayTogglerComponent);
+    fixture = TestBed.createComponent(PassengerCounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

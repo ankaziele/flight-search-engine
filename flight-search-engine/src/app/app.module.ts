@@ -10,11 +10,12 @@ import { AirportComponent } from './airport/airport.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatIconModule} from '@angular/material/icon';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
-import { OneWayTogglerComponent } from './one-way-toggler/one-way-toggler.component';
+import { PassengerCounterComponent } from './passenger-counter/passenger-counter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { OneWayTogglerComponent } from './one-way-toggler/one-way-toggler.compon
     AirportComponent,
     CalendarComponent,
     TopNavBarComponent,
-    OneWayTogglerComponent,
+    PassengerCounterComponent,
   ],
   imports: [
     BrowserModule,

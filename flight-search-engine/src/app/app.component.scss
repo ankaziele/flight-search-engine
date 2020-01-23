@@ -23,17 +23,20 @@
 }
 
 .flightSearchEngine {
-  display: block;
-  width: 90%;
-  height: 90%;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  width: 70%;
+  max-width: 1200px;
+  height: 50vh;
   background-color: rgba(248, 244, 244, 0.411);
   align-self: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 20px;
   border-radius: 10px;
 }
 
-.appWrapper {
+.airportWrapper {
   display: inline-grid;
   grid-template-columns: 45% 10% 45%;
   width: 90%;
@@ -41,8 +44,15 @@
   justify-items: center;
 }
 
+.calendarWrapper {
+  margin: 30px;
+  width: 90%;
+  display: block;
+}
+
 .toggler {
   justify-self: center;
+  align-self: center;
 }
 
 .calendar {
@@ -55,11 +65,26 @@
 }
 
 @media (max-width: 801px) {
-  .appWrapper {
+
+  .flightSearchEngine {
+    display: block;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(248, 244, 244, 0.411);
+    align-self: center;
+    justify-content: space-between;
+    margin: 20px;
+  }
+
+  .airportWrapper {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 35% 35% 30%;
     width: 85%;
     height: 40%;
+  }
+
+  .calendarWrapper {
+    height: 60%;
   }
 }
