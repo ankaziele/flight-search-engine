@@ -1,25 +1,5 @@
+<!-- <!-- <app-top-nav-bar></app-top-nav-bar> --> -->
 <div class="bg">
-  <app-top-nav-bar></app-top-nav-bar>
   <router-outlet></router-outlet>
-  <div class="flightSearchEngine">
-    <div class="airportWrapper">
-      <app-airport [placeholder]="from" [label]="from" [value]="origin" (valueChange)="incomingOrigin($event)"
-        class="airport">
-        {{ origin }}
-      </app-airport>
-      <app-input-toggler [origin]="origin" [destination]="destination"
-        (togglingAirports)="receiveChangeAirports($event)">
-      </app-input-toggler>
-      <app-airport [placeholder]="to" [label]="to" [value]="destination" (valueChange)="incomingDestination($event)"
-        class="airport">
-        {{ destination }}</app-airport>
-    </div>
-    <div class="calendarWrapper">
-      <app-calendar></app-calendar>
-      <app-passenger-counter [traveller]="adult" [counter]="adultCounter"
-        (numberOfPassengers)="updateNumberOfTravellers($event)"></app-passenger-counter>
-      <app-passenger-counter [traveller]="child" [counter]="childCounter"
-        (numberOfPassengers)="updateNumberOfTravellers($event)"></app-passenger-counter>
-    </div>
-  </div>
+
 </div>
