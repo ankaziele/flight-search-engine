@@ -22,19 +22,16 @@
   z-index: -1;
 }
 
-// .flightSearchEngine {
-//   display: flex;
-//   flex-direction: column;
-//   // align-items: center;
-//   width: 70%;
-//   max-width: 1200px;
-//   height: 50vh;
-//   background-color: rgba(248, 244, 244, 0.411);
-//   align-self: center;
-//   justify-content: flex-start;
-//   margin: 20px;
-//   border-radius: 10px;
-// }
+.flightSearchEngine {
+  align-self: center;
+  width: 70%;
+  max-width: 1200px;
+  height: 100%;
+  // background-color: rgba(248, 244, 244, 0.411);
+  // justify-content: flex-start;
+  // margin: 20px;
+  // border-radius: 10px;
+}
 
 // .airportWrapper {
 //   display: inline-grid;
@@ -66,15 +63,15 @@
 
 // @media (max-width: 801px) {
 
-//   .flightSearchEngine {
-//     display: block;
-//     width: 90%;
-//     height: 90%;
-//     background-color: rgba(248, 244, 244, 0.411);
-//     align-self: center;
-//     justify-content: space-between;
-//     margin: 20px;
-//   }
+.flightSearchEngine {
+  display: block;
+  width: 90%;
+  height: 90%;
+  // background-color: rgba(248, 244, 244, 0.411);
+  // align-self: center;
+  // justify-content: space-between;
+  // margin: 20px;
+}
 
 //   .airportWrapper {
 //     display: grid;
