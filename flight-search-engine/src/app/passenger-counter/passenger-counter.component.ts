@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: 'app-passenger-counter',
@@ -6,22 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./passenger-counter.component.scss']
 })
 export class PassengerCounterComponent implements OnInit {
-  counter: number = 1;
+  @Input() traveller: string;
+  @Input() counter: number;
+  @Output() numberOfPassengers = new EventEmitter<{counter: number, traveller: string}>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  addTraveller() {
-    console.log(this.counter)
-    this.counter ++;
-  }
-
-  removeTraveller() {
-    if (this.counter > 0 ) {
-      this.counter --;
+  sendNumberOfPassengers(event) {
+    if (event.target.innerText === "remove_circle") {
+      if(this.counter === 0) {
+        return
+      }
+      this.counter --
     }
+    if (event.target.innerText === "add_circle") {
+      this.counter++;
+    }
+    this.numberOfPassengers.emit({counter: this.counter, traveller: this.traveller});
   }
-
 }

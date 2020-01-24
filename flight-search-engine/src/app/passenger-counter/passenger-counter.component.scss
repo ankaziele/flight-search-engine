@@ -1,3 +1,7 @@
-.travellerCounter {
+.counterWrapper {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    max-width: 200px;
 }

@@ -1,3 +1,15 @@
-<div class="travellerCounter">
-    <button (click)="removeTraveller()" class="counterButton">-</button><p>Traveller</p><p>{{counter}}</p><button (click)="addTraveller()"class="counterButton">+</button>
-</div>
+<div class="counterWrapper">
+    <mat-icon
+      aria-hidden="false"
+      color="primary"
+      (click)="sendNumberOfPassengers($event)"
+      >add_circle</mat-icon
+    >
+    <p traveller="traveller" counter="counter">{{ traveller }} {{ counter }}</p>
+    <mat-icon
+      aria-hidden="false"
+      color="primary"
+      (click)="sendNumberOfPassengers($event, counter)"
+      >remove_circle</mat-icon
+    >
+  </div>

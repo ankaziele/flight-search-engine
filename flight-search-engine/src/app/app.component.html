@@ -29,7 +29,8 @@
     </div>
     <div class="calendarWrapper">
       <app-calendar></app-calendar>
-      <app-passenger-counter></app-passenger-counter>
+      <app-passenger-counter [traveller]="adult" [counter]="adultCounter" (numberOfPassengers)="updateNumberOfTravellers($event)"></app-passenger-counter>
+<app-passenger-counter [traveller]="child" [counter]="childCounter" (numberOfPassengers)="updateNumberOfTravellers($event)"></app-passenger-counter>
     </div>
   </div>
 </div>
