@@ -1,15 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-flight-search-engine',
-  templateUrl: './flight-search-engine.component.html',
-  styleUrls: ['./flight-search-engine.component.sass']
+  selector: "app-flight-search-engine",
+  templateUrl: "./flight-search-engine.component.html",
+  styleUrls: ["./flight-search-engine.component.scss"]
 })
-export class FlightSearchEngineComponent implements OnInit {
+export class FlightSearchEngineComponent {
+  origin: string = "";
+  destination: string = "";
+  title = "flight-search-engine";
+  from: string = "From";
+  to: string = "To";
+  checkBox: boolean;
+  adult: string = "Adults";
+  child: string = "Children";
+  children: string = "Children";
+  adultCounter: number = 1;
+  childCounter: number = 0;
 
-  constructor() { }
-
-  ngOnInit() {
+  receiveChangeAirports($event) {
+    this.origin = $event.dest;
+    this.destination = $event.origin;
   }
 
+  incomingOrigin($event) {
+    this.origin = $event.airport;
+  }
+
+  incomingDestination($event) {
+    this.destination = $event.airport;
+  }
+
+  isCheckBoxSelected($event) {
+    this.checkBox = $event.selected;
+  }
+
+  updateNumberOfTravellers(event) {
+    if (event.traveller === this.adult) {
+      this.adultCounter = event.counter;
+    }
+    if (event.traveller === this.child) {
+      this.childCounter = event.counter;
+    }
+  }
 }

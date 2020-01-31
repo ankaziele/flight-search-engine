@@ -18,11 +18,12 @@ import { PassengerCounterComponent } from "./passenger-counter/passenger-counter
 import { CarRentalComponent } from "./car-rental/car-rental.component";
 import { HotelsComponent } from "./hotels/hotels.component";
 import { RouterModule, RouterLink, Routes } from "@angular/router";
-import { FlightSearchEngineComponent } from './flight-search-engine/flight-search-engine.component';
+import { FlightSearchEngineComponent } from "./flight-search-engine/flight-search-engine.component";
 
 const appRouts: Routes = [
-  { path: "car-rental", component: CarRentalComponent },
-  { path: "hotels", component: HotelsComponent }
+  // { path: "", component: FlightSearchEngineComponent },
+  // { path: "car-rental", component: CarRentalComponent },
+  // { path: "hotels", component: HotelsComponent }
 ];
 
 @NgModule({
@@ -47,8 +48,8 @@ const appRouts: Routes = [
     MatIconModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule,
-    RouterModule.forRoot(appRouts)
+    MatInputModule
+    // RouterModule.forRoot(appRouts)
   ],
   exports: [RouterModule],
   providers: [],
