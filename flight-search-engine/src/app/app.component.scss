@@ -1,11 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.bg {
-  // width: 100%;
-  // height: 100%;
+.bg1 {
+  width: 100%;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
-  // position: relative;
+  position: relative;
 }
 
 .bg::after {
@@ -22,16 +22,21 @@
   z-index: -1;
 }
 
-.flightSearchEngine {
+.routingContent {
+  // display: flex;
   align-self: center;
-  width: 70%;
+  width: 100%;
   max-width: 1200px;
-  height: 100%;
+  margin-top: 100px;
+  // height: 100%;
   // background-color: rgba(248, 244, 244, 0.411);
-  // justify-content: flex-start;
   // margin: 20px;
   // border-radius: 10px;
 }
+
+
+
+
 
 // .airportWrapper {
 //   display: inline-grid;
@@ -61,17 +66,21 @@
 //   max-width: 380px;
 // }
 
-// @media (max-width: 801px) {
-
-.flightSearchEngine {
-  display: block;
-  width: 90%;
-  height: 90%;
-  // background-color: rgba(248, 244, 244, 0.411);
-  // align-self: center;
-  // justify-content: space-between;
-  // margin: 20px;
+@media (max-width: 801px) {
+.routingContent {
+  margin-top: 0;
 }
+}
+
+// .flightSearchEngine {
+//   display: block;
+//   width: 90%;
+//   height: 90%;
+//   background-color: rgba(248, 244, 244, 0.411);
+//   align-self: center;
+//   justify-content: space-between;
+//   margin: 20px;
+// }
 
 //   .airportWrapper {
 //     display: grid;

@@ -23,6 +23,10 @@
 }
 
 @media (max-width: 801px) {
+  .calendarComponentWrapper {
+    align-items: center;
+  }
+
   .checkboxWrapper {
     align-self: flex-start;
     margin-left: 95px;
@@ -67,6 +71,9 @@
 
 .calendar.btn {
     z-index: 1;
+    &:hover {
+      background-color: rgb(21, 36, 68);
+    }
 }
 
 
