@@ -1,7 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  color: rgb(21, 36, 68);
+}
+
+.bg::after {
+  content: "";
+  background: url("../src/app/LHA350.jpg") no-repeat center;
+  background-size: 100% 100%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

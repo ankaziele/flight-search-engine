@@ -17,14 +17,9 @@ import { TopNavBarComponent } from "./top-nav-bar/top-nav-bar.component";
 import { PassengerCounterComponent } from "./passenger-counter/passenger-counter.component";
 import { CarRentalComponent } from "./car-rental/car-rental.component";
 import { HotelsComponent } from "./hotels/hotels.component";
-import { RouterModule, RouterLink, Routes } from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { FlightSearchEngineComponent } from "./flight-search-engine/flight-search-engine.component";
-
-const appRouts: Routes = [
-  // { path: "", component: FlightSearchEngineComponent },
-  // { path: "car-rental", component: CarRentalComponent },
-  // { path: "hotels", component: HotelsComponent }
-];
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -48,8 +43,8 @@ const appRouts: Routes = [
     MatIconModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
-    // RouterModule.forRoot(appRouts)
+    MatInputModule,
+    NgbModule
   ],
   exports: [RouterModule],
   providers: [],

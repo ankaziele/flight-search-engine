@@ -2,6 +2,18 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 20%;
     max-width: 200px;
+}
+
+.travelerType {
+    font-size: 15px;
+    font-weight: 500;
+    width: 100px;
+}
+
+.travellerCounterField {
+    width: 25px;
+    background: white;
+    border: 1px solid rgb(21, 36, 68);
+    text-align: center;
 }

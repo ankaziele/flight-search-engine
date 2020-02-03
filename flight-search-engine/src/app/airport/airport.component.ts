@@ -1,15 +1,22 @@
-import { Component, OnInit, HostListener, Input, Output, EventEmitter } from '@angular/core';
-import { AirportsService } from '../airports.service';
-import { Area } from '../area';
-import { Airport } from '../airport';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  Input,
+  Output,
+  EventEmitter
+} from "@angular/core";
+import { AirportsService } from "../airports.service";
+import { Area } from "../area";
+import { Airport } from "../airport";
 
 @Component({
-  selector: 'app-airport',
-  templateUrl: './airport.component.html',
-  styleUrls: ['./airport.component.scss']
+  selector: "app-airport",
+  templateUrl: "./airport.component.html",
+  styleUrls: ["./airport.component.scss"]
 })
 export class AirportComponent implements OnInit {
-  @Input() value: string = '';
+  @Input() value: string = "";
   selectedAirport: any;
   flatAirportList: Airport[];
   airportsList: (Airport | Area)[];
@@ -18,38 +25,28 @@ export class AirportComponent implements OnInit {
   @Output() valueChange = new EventEmitter();
   @Input() origin: string;
   @Input() label: string;
-  
 
-
-  constructor(private airportsService: AirportsService) {
-  }
+  constructor(private airportsService: AirportsService) {}
 
   ngOnInit() {
     this.airportsList = this.airportsService.getAirports();
     this.airportsList.sort((a, b) => {
-      
       if ((a as Airport).airport && (b as Area).area) {
         return -1;
-      }
-      else if ((a as Area).area && (b as Airport).airport) {
+      } else if ((a as Area).area && (b as Airport).airport) {
         return 1;
-      }
-      else {
+      } else {
         return 0;
       }
-    })
-    this.flatAirportList = this.airportsService.getFlatListOfAirports(this.airportsList)
+    });
+    this.flatAirportList = this.airportsService.getFlatListOfAirports(
+      this.airportsList
+    );
   }
 
   addToInput() {
     this.value = this.selectedAirport.airport;
-    // this.selectedAirport = selectedAirport;
-    // if(this.value = this.selectedAirport.airport) {
-    //   console.log('funn', this.selectedAirport.selected)
-    //   this.selectedAirport.selected = false;
-    // }
-
-    this.valueChange.emit(this.selectedAirport)
+    this.valueChange.emit(this.selectedAirport);
     this.isOpened = false;
   }
 
@@ -58,7 +55,7 @@ export class AirportComponent implements OnInit {
   }
 
   onMouseOver(airport) {
-    this.selectedAirport = airport
+    this.selectedAirport = airport;
     airport.selected = true;
   }
 
@@ -70,40 +67,43 @@ export class AirportComponent implements OnInit {
   previousAirport() {
     this.isOpened = true;
     if (!this.selectedAirport && this.flatAirportList.length) {
-      this.selectedAirport = this.flatAirportList[0]
-      this.selectedAirport.selected = true
-      this.value = this.selectedAirport.airport
-    } else {
-      let newIndex = this.flatAirportList.findIndex(airport => airport == this.selectedAirport) - 1
-      this.selectedAirport = this.flatAirportList[newIndex]
+      this.selectedAirport = this.flatAirportList[0];
       this.selectedAirport.selected = true;
-      this.flatAirportList[newIndex+1].selected = false;
-      this.value = this.selectedAirport.airport
+      this.value = this.selectedAirport.airport;
+    } else {
+      let newIndex =
+        this.flatAirportList.findIndex(
+          airport => airport == this.selectedAirport
+        ) - 1;
+      this.selectedAirport = this.flatAirportList[newIndex];
+      this.selectedAirport.selected = true;
+      this.flatAirportList[newIndex + 1].selected = false;
+      this.value = this.selectedAirport.airport;
     }
   }
 
-
   nextAirport() {
-    console.log (this.flatAirportList)
+    console.log(this.flatAirportList);
     this.isOpened = true;
     if (!this.selectedAirport && this.flatAirportList.length) {
-      this.selectedAirport = this.flatAirportList[0]
-      this.selectedAirport.selected = true
-      this.value = this.selectedAirport.airport
-      console.log(this.selectedAirport)
+      this.selectedAirport = this.flatAirportList[0];
+      this.selectedAirport.selected = true;
+      this.value = this.selectedAirport.airport;
+      console.log(this.selectedAirport);
     } else {
-      let newIndex = this.flatAirportList.findIndex(airport => airport == this.selectedAirport) + 1;
-      this.selectedAirport = this.flatAirportList[newIndex]
-      this.selectedAirport.selected = true
-      this.flatAirportList[newIndex-1].selected = false;
-      this.value = this.selectedAirport.airport
-
-      
+      let newIndex =
+        this.flatAirportList.findIndex(
+          airport => airport == this.selectedAirport
+        ) + 1;
+      this.selectedAirport = this.flatAirportList[newIndex];
+      this.selectedAirport.selected = true;
+      this.flatAirportList[newIndex - 1].selected = false;
+      this.value = this.selectedAirport.airport;
     }
   }
 
   clearInput() {
-    this.value = '';
+    this.value = "";
     this.isOpened = true;
   }
 
