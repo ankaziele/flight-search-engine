@@ -6,15 +6,6 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.calendarWrapper {
-  width: 60%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.example-full-width {
-  padding: 20px;
-}
 
 .checkboxWrapper {
   display: flex;
@@ -32,11 +23,6 @@
 }
 
 @media (max-width: 801px) {
-  .calendarWrapper {
-    flex-direction: column;
-    align-self: center;
-  }
-  
   .checkboxWrapper {
     align-self: flex-start;
     margin-left: 95px;
@@ -47,8 +33,49 @@
     height: 20px;
     width: 20px;
   }
-
-  .example-full-width {
-    padding: 0;
-  }
 }
+
+
+
+.form-group.hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.calendar.btn {
+    z-index: 1;
+}
+
+
+@media (max-width: 541px) {
+ .ml-2 {
+   margin-left: 0 !important;
+   margin-top: 10px;
+ }
+}
+
+
+

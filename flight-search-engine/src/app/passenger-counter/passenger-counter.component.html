@@ -1,15 +1,15 @@
 <div class="counterWrapper">
-    <mat-icon
-      aria-hidden="false"
+    <i
+    class="fa fa-plus-circle" aria-hidden="true"
       color="primary"
       (click)="sendNumberOfPassengers($event)"
-      >add_circle</mat-icon
+      ></i
     >
     <p traveller="traveller" counter="counter">{{ traveller }} {{ counter }}</p>
-    <mat-icon
-      aria-hidden="false"
+    <i
+    class="fa fa-minus-circle" aria-hidden="true"
       color="primary"
-      (click)="sendNumberOfPassengers($event, counter)"
-      >remove_circle</mat-icon
+      (click)="sendNumberOfPassengers($event)"
+      ></i
     >
   </div>

@@ -15,13 +15,13 @@ export class PassengerCounterComponent implements OnInit {
   ngOnInit() {}
 
   sendNumberOfPassengers(event) {
-    if (event.target.innerText === "remove_circle") {
+    if (event.target.className === "fa fa-minus-circle") {
       if(this.counter === 0) {
         return
       }
       this.counter --
     }
-    if (event.target.innerText === "add_circle") {
+    if (event.target.className === "fa fa-plus-circle") {
       this.counter++;
     }
     this.numberOfPassengers.emit({counter: this.counter, traveller: this.traveller});
