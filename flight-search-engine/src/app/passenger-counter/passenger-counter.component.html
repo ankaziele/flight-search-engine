@@ -1,15 +1,19 @@
 <div class="counterWrapper">
-    <i
-    class="fa fa-plus-circle" aria-hidden="true"
-      color="primary"
-      (click)="sendNumberOfPassengers($event)"
-      ></i
-    >
-    <p traveller="traveller" counter="counter">{{ traveller }} {{ counter }}</p>
-    <i
-    class="fa fa-minus-circle" aria-hidden="true"
-      color="primary"
-      (click)="sendNumberOfPassengers($event)"
-      ></i
-    >
+  <div class="travelerType">{{ traveller }}</div>
+  <i
+    class="fa fa-minus-circle"
+    aria-hidden="true"
+    color="primary"
+    (click)="sendNumberOfPassengers($event)"
+  ></i>
+  <div class="travellerCounterField" traveller="traveller" counter="counter">
+    {{ counter }}
   </div>
+
+  <i
+    class="fa fa-plus-circle"
+    aria-hidden="true"
+    color="primary"
+    (click)="sendNumberOfPassengers($event)"
+  ></i>
+</div>
