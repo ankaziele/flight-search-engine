@@ -19,6 +19,7 @@ import { CarRentalComponent } from "./car-rental/car-rental.component";
 import { HotelsComponent } from "./hotels/hotels.component";
 import { RouterModule, RouterLink, Routes } from "@angular/router";
 import { FlightSearchEngineComponent } from "./flight-search-engine/flight-search-engine.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRouts: Routes = [
   // { path: "", component: FlightSearchEngineComponent },
@@ -36,7 +37,8 @@ const appRouts: Routes = [
     PassengerCounterComponent,
     CarRentalComponent,
     HotelsComponent,
-    FlightSearchEngineComponent
+    FlightSearchEngineComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ const appRouts: Routes = [
     MatIconModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    NgbModule
     // RouterModule.forRoot(appRouts)
   ],
   exports: [RouterModule],

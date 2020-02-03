@@ -1,13 +1,39 @@
-<div class="navbarWrapper">
-    <div class="itemsWrapper">
-        <a routerLink="/">
-            <div class="navbarItem">Flights</div>
-        </a>
-        <a routerLink="car-rental">
-            <div class="navbarItem">Car rental</div>
-        </a>
-        <a routerLink="hotels">
-            <div class="navbarItem">Hotels</div>
-        </a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" href="#">
+      Brand
+    </a> -->
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpened }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <i
+            *ngIf="navbarOpened"
+            class="fas fa-plane"
+            style="font-size:20px;color:white; padding-right: 10px;"
+          ></i>
+          <a class="nav-link" routerLink="/">Flights</a>
+        </li>
+  
+        <li class="nav-item">
+          <i
+            *ngIf="navbarOpened"
+            class="fas fa-hotel"
+            style="font-size:20px;color:white; padding-right: 10px;"
+          ></i>
+          <a class="nav-link" routerLink="hotels">Hotels</a>
+        </li>
+  
+        <li class="nav-item">
+          <i
+            *ngIf="navbarOpened"
+            class="fas fa-car"
+            style="font-size:20px;color:white; padding-right: 10px;"
+          ></i>
+          <a class="nav-link" routerLink="car-rental">Car rental</a>
+        </li>
+      </ul>
     </div>
-</div>
+  </nav>
