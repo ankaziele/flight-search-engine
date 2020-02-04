@@ -1,0 +1,91 @@
+.flightSearchEngine {
+  max-width: 1200px;
+  background-color: rgba(248, 244, 244, 0.411);
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.travellerInfo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.airportWrapper {
+  display: inline-grid;
+  grid-template-columns: 45% 10% 45%;
+  width: 90%;
+  margin: 30px;
+  justify-items: center;
+}
+
+.travelDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendarWrapper {
+  margin: 30px;
+  width: 50%;
+  display: block;
+}
+
+.passengerCounter {
+  width: 50%;
+  margin-top: 30px;
+}
+
+.toggler {
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+}
+
+.calendar {
+  margin: 30px;
+}
+
+.airport {
+  width: 100%;
+  max-width: 380px;
+}
+
+@media (max-width: 801px) {
+  .flightSearchEngine {
+    // display: block;
+    width: 90%;
+    height: 100%;
+    background-color: rgba(248, 244, 244, 0.411);
+    align-self: center;
+    justify-content: space-between;
+    margin: 20px;
+  }
+
+  .airportWrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 35% 35% 30%;
+    width: 85%;
+    height: 40%;
+  }
+  
+  .travelDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .calendarWrapper {
+    height: 60%;
+    width: 80%;
+    align-self: center;
+  }
+
+
+  .passengerCounter {
+    width: 80%;
+    align-self: center;
+    margin-top: 0;
+  }
+
+
+}
