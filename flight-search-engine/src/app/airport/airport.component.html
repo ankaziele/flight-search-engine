@@ -15,10 +15,10 @@
     <span class="close" (click)="clearInput()"></span>
     <span class="border"></span>
   </label>
-  <ul *ngIf="value.length > 2 && isOpened" class="listWrapper">
+  <ul *ngIf="value.length >= 2 && isOpened" class="listWrapper">
     <div *ngFor="let airport of airportsList" class="itemWrapper">
       <div
-        *ngIf="airport.airport"
+        *ngIf="airport.airport || airport.code"
         (mouseenter)="onMouseOver(airport)"
         (mouseleave)="onMouseLeave(airport)"
       >

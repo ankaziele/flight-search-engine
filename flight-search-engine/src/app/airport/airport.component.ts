@@ -25,6 +25,7 @@ export class AirportComponent implements OnInit {
   @Output() valueChange = new EventEmitter();
   @Input() origin: string;
   @Input() label: string;
+  response: any
 
   constructor(private airportsService: AirportsService) {}
 
@@ -45,12 +46,12 @@ export class AirportComponent implements OnInit {
   }
 
   addToInput() {
-    this.value = this.selectedAirport.airport;
+    this.value = this.selectedAirport.airport || this.selectedAirport.code || this.selectedAirport.country;
     // this.selectedAirport = selectedAirport;
-    // if(this.value = this.selectedAirport.airport) {
-    //   console.log('funn', this.selectedAirport.selected)
-    //   this.selectedAirport.selected = false;
-    // }
+    if(this.value = this.selectedAirport.airport) {
+      console.log('funn', this.selectedAirport)
+      this.selectedAirport.selected = false;
+    }
 
     this.valueChange.emit(this.selectedAirport);
     this.isOpened = false;
@@ -115,7 +116,9 @@ export class AirportComponent implements OnInit {
 
   onKeyDown() {
     this.airportsService.getAirports(this.value).subscribe(airports => {
-      this.airportsList = airports;
+      this.response = airports
+      this.airportsList = this.response.items;
+      console.log(this.airportsList)
       this.airportsList.sort((a, b) => {
         if ((a as Airport).airport && (b as Area).area) {
           return -1;
