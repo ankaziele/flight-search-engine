@@ -20,6 +20,7 @@ import { HotelsComponent } from "./hotels/hotels.component";
 import { RouterModule } from "@angular/router";
 import { FlightSearchEngineComponent } from "./flight-search-engine/flight-search-engine.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
     NgbModule
   ],
   exports: [RouterModule],

@@ -25,27 +25,21 @@ export class AirportComponent implements OnInit {
   @Output() valueChange = new EventEmitter();
   @Input() origin: string;
   @Input() label: string;
+  response: any;
 
   constructor(private airportsService: AirportsService) {}
 
-  ngOnInit() {
-    this.airportsList = this.airportsService.getAirports();
-    this.airportsList.sort((a, b) => {
-      if ((a as Airport).airport && (b as Area).area) {
-        return -1;
-      } else if ((a as Area).area && (b as Airport).airport) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-    this.flatAirportList = this.airportsService.getFlatListOfAirports(
-      this.airportsList
-    );
-  }
+  ngOnInit() {}
 
   addToInput() {
-    this.value = this.selectedAirport.airport;
+    this.value =
+      this.selectedAirport.airport ||
+      this.selectedAirport.code ||
+      this.selectedAirport.country;
+    if ((this.value = this.selectedAirport.airport)) {
+      this.selectedAirport.selected = false;
+    }
+
     this.valueChange.emit(this.selectedAirport);
     this.isOpened = false;
   }
@@ -83,13 +77,11 @@ export class AirportComponent implements OnInit {
   }
 
   nextAirport() {
-    console.log(this.flatAirportList);
     this.isOpened = true;
     if (!this.selectedAirport && this.flatAirportList.length) {
       this.selectedAirport = this.flatAirportList[0];
       this.selectedAirport.selected = true;
       this.value = this.selectedAirport.airport;
-      console.log(this.selectedAirport);
     } else {
       let newIndex =
         this.flatAirportList.findIndex(
@@ -108,6 +100,23 @@ export class AirportComponent implements OnInit {
   }
 
   onKeyDown() {
+    this.airportsService.getAirports(this.value).subscribe(airports => {
+      this.response = airports;
+      this.airportsList = this.response.items;
+      this.airportsList.sort((a, b) => {
+        if ((a as Airport).airport && (b as Area).area) {
+          return -1;
+        } else if ((a as Area).area && (b as Airport).airport) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      this.flatAirportList = this.airportsService.getFlatListOfAirports(
+        this.airportsList
+      );
+    });
+
     this.isOpened = true;
   }
 }

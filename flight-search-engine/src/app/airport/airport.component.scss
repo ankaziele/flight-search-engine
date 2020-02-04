@@ -154,3 +154,16 @@ input {
 .close:after {
   transform: rotate(-45deg);
 }
+
+@media (max-width: 801px) {
+  .input {
+    font-size: 12px;
+  }
+  .label {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .toggler {
+    margin-top: 50px;
+  }
+}

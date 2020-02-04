@@ -1,0 +1,11 @@
+{
+    "/service/autosuggest/airport": {
+        "target":  {
+          "host":"www.lufthansa.com",
+          "protocol": "https:"
+        },
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "info"
+    }
+  }
