@@ -6,7 +6,7 @@
       placeholder="{{ placeholder }}"
       class="input"
       isOpened="isOpened"
-      (keydown)="onKeyDown()"
+      (keyup)="onKeyDown()"
       (keyup.arrowup)="previousAirport()"
       (keyup.arrowdown)="nextAirport()"
       (keydown.enter)="addToInput()"
