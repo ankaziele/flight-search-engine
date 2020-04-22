@@ -6,10 +6,10 @@
       placeholder="{{ placeholder }}"
       class="input"
       isOpened="isOpened"
-      (keyup)="onKeyDown()"
+      (keyup)="onKeyDown($event)"
       (keyup.arrowup)="previousAirport()"
       (keyup.arrowdown)="nextAirport()"
-      (keydown.enter)="addToInput()"
+      (keyup.enter)="addToInput()"
     />
     <span class="label">{{ label }}</span>
     <span class="close" (click)="clearInput()"></span>

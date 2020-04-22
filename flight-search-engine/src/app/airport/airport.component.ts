@@ -9,6 +9,7 @@ import {
 import { AirportsService } from "../airports.service";
 import { Area } from "../area";
 import { Airport } from "../airport";
+import { AirportData } from "../airportData";
 
 @Component({
   selector: "app-airport",
@@ -25,7 +26,6 @@ export class AirportComponent implements OnInit {
   @Output() valueChange = new EventEmitter();
   @Input() origin: string;
   @Input() label: string;
-  response: any;
 
   constructor(private airportsService: AirportsService) {}
 
@@ -99,23 +99,24 @@ export class AirportComponent implements OnInit {
     this.isOpened = true;
   }
 
-  onKeyDown() {
-    this.airportsService.getAirports(this.value).subscribe(airports => {
-      this.response = airports;
-      this.airportsList = this.response.items;
-      this.airportsList.sort((a, b) => {
-        if ((a as Airport).airport && (b as Area).area) {
-          return -1;
-        } else if ((a as Area).area && (b as Airport).airport) {
-          return 1;
-        } else {
-          return 0;
-        }
+  onKeyDown(key) {
+    if (key.code !== "ArrowUp" || key.code !== "ArrowDown") {
+      this.airportsService.getAirports(this.value).subscribe(airports => {
+        this.airportsList = airports.items;
+        this.airportsList.sort((a, b) => {
+          if ((a as Airport).airport && (b as Area).area) {
+            return -1;
+          } else if ((a as Area).area && (b as Airport).airport) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        this.flatAirportList = this.airportsService.getFlatListOfAirports(
+          this.airportsList
+        );
       });
-      this.flatAirportList = this.airportsService.getFlatListOfAirports(
-        this.airportsList
-      );
-    });
+    }
 
     this.isOpened = true;
   }

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalendarComponent } from './calendar.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
@@ -8,7 +10,12 @@ describe('CalendarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalendarComponent ]
+      declarations: [ CalendarComponent ], //tu zawsze komponent
+      imports: [
+        FormsModule,
+        NgbModule
+      ], // tu zawsze modules
+      providers: [] //obiekty ktore sa klasami js, czyli np servisy
     })
     .compileComponents();
   }));

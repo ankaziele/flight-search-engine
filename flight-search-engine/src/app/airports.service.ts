@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Airport } from './airport';
 import { Area } from './area';
+import { AirportData } from './airportData';
 
 @Injectable({
   providedIn: 'root'
@@ -122,7 +123,7 @@ export class AirportsService {
 
   getAirports(query) {
     // return JSON.parse(JSON.stringify(this.airports));
-    return this.httpClient.get<(Airport | Area)[]>(`http://localhost:4200/service/autosuggest/airport?rep=airportsReq&start=0&rd=y&site=PL&lang=en&portal=LH&query=${query}&apptype=ibebo`)
+    return this.httpClient.get<any>(`http://localhost:4200/service/autosuggest/airport?rep=airportsReq&start=0&rd=y&site=PL&lang=en&portal=LH&query=${query}&apptype=ibebo`)
 
   }
 

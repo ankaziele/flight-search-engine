@@ -21,6 +21,7 @@ import { RouterModule } from "@angular/router";
 import { FlightSearchEngineComponent } from "./flight-search-engine/flight-search-engine.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HttpClientModule } from '@angular/common/http';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     PassengerCounterComponent,
     CarRentalComponent,
     HotelsComponent,
-    FlightSearchEngineComponent
+    FlightSearchEngineComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
