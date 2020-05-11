@@ -37,10 +37,19 @@ describe('AirportComponent', () => {
     expect(inputElement).toBeTruthy()
   })
 
+  it('should have 1 list element', () => {
+    let listElement = fixture.debugElement.queryAll(By.css('ul'))
+    expect(listElement).toBeTruthy()
+  })
+
 it ('should contain close span', () => {
   let closeSpan = fixture.debugElement.query(By.css('.close'))
   console.log(closeSpan)
 })
+
+// it ('sholud open airport list when at least to characters are typed in input', () => {
+//   let inputValue = 
+// })
 
 });
 

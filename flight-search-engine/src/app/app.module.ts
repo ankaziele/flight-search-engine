@@ -20,8 +20,15 @@ import { HotelsComponent } from "./hotels/hotels.component";
 import { RouterModule } from "@angular/router";
 import { FlightSearchEngineComponent } from "./flight-search-engine/flight-search-engine.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SummaryComponent } from './summary/summary.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json')
+}
 
 @NgModule({
   declarations: [
@@ -48,7 +55,15 @@ import { SummaryComponent } from './summary/summary.component';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    TranslateModule.forRoot({
+      // custom loader loads the local files
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [RouterModule],
   providers: [],
